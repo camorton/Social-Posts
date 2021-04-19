@@ -1,0 +1,15 @@
+<!-- THIS IS MY PARENT COMPONENT -->
+<header><h1>My Thoughts</h1></header>
+<button (click)="showPostForm = !showPostForm">New Thought</button>
+<app-post *ngFor="let post of posts; let i=index;" [post]="post" (deleted)="onDelete(i)"></app-post>
+<!-- this says we wont' see the post-form input form unless the submit button is clicked -->
+<app-post-form *ngIf="showPostForm" (submitted)="onSubmit($event)"></app-post-form>
+
+
+
+
+
+
+
+
+
